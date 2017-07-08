@@ -1,0 +1,528 @@
+// TOP.SCSS
+
+/* top-contents
+================================================== */
+
+.top-contents {
+	padding: 60px 0 0;
+	background-color: $bg-gray;
+	overflow: hidden;
+
+	@include pc {
+		min-width: $max-width;
+		padding: 80px 0 0;
+	}
+
+	& + .navigator {
+		padding: 0;
+	}
+}
+
+
+
+/* section
+================================================== */
+
+.top-section {
+	width: 100%;
+	margin: auto;
+	position: relative;
+
+	@include pc {
+		width: $max-width;
+	}//pc
+
+	@include e(ttl) {
+		@include QuickB;
+		position: relative;
+		margin-bottom: 40px;
+		text-align: center;
+
+		@include pc {
+			display: inline-block;
+			text-align: left;
+			margin-bottom: 60px;
+		}
+
+		i {
+			@include fz(28,28);
+			vertical-align: inherit;
+			padding-right: 10px;
+			padding-bottom: 3px;
+
+			@include pc {
+				@include fz(42,60);
+				vertical-align: top;
+				margin-right: 20px;
+				padding-right: 0;
+				padding-bottom: 0;
+			}
+		}//i
+
+		.ttl-lg {
+			@include fz(36,36);
+			display: inline-block;
+
+			@include pc {
+				@include fz(56,56);
+			}
+		}//.ttl-lg
+
+		.ttl-slash {
+			@include fz(16,16);
+			display: inline-block;
+			position: relative;
+
+			@include pc {
+				@include fz(14,24);
+			}
+		}//.ttl-sm
+
+		.ttl-sm {
+			@include fz(16,16);
+			display: inline-block;
+			position: relative;
+
+			@include pc {
+				@include fz(16,24);
+			}
+		}//.ttl-sm
+	}//e(ttl)
+}//.section
+
+
+
+/* top-pickup
+================================================== */
+
+.top-pickup {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 0 120px;
+	position: relative;
+
+	@include pc {
+		width: $max-width;
+		padding: 80px 20px 10px;
+	}//pc
+
+
+
+	.top-section__ttl {
+		display: none;
+
+		@include pc {
+			display: inline-block;
+		}
+	}
+
+	@include e(sttl) {
+		margin-bottom: 40px;
+	}
+
+	@include e(item) {
+		position: relative;
+		z-index: 30;
+
+		@include pc {
+			a {
+				@include deco;
+				@include alpha;
+			}
+		}
+
+		&:first-child {
+			@include pc {
+				width: 560px;
+				position: absolute;
+				top: 296px;
+				left: 20px;
+			}
+		}
+
+		&:nth-child(2) {
+			@include pc {
+				width: 400px;
+				margin-top: -215px;
+				margin-left: 640px;
+				margin-bottom: 60px;
+			}
+		}
+
+		&:nth-child(3) {
+			@include pc {
+				width: 480px;
+				margin-left: 640px;
+			}
+		}
+	}
+
+
+
+	@include e(img) {
+		width: 100%;
+		max-width: 100%;
+
+		img {
+			width: 100%;
+		}
+	}//e(img)
+
+	@include e(txtarea) {
+		padding: 20px 20px 0;
+
+		@include pc {
+			padding: 20px 0 0;
+		}
+	}//e(txtarea)
+
+	@include e(copy) {
+		@include QuickB;
+		@include fz(14,21);
+		color: #000;
+		font-weight: bold;
+	}//e(copy)
+
+	@include e(ttl) {
+		@include QuickB;
+		@include fz(18,27);
+		color: #000;
+		font-weight: bold;
+	}//e(ttl)
+
+	@include e(date) {
+		@include QuickB;
+		@include fz(14,21);
+		color: $gray;
+	}//e(date)
+}//.top-mv
+
+
+
+/* top-article
+================================================== */
+
+.top-article {
+	width: 100%;
+	padding: 0 20px 120px;
+
+	@include pc {
+		width: $max-width;
+		padding: 0 0 160px 100px;
+	}//pc
+
+	.card-list {
+
+		@include pc {
+			margin-bottom: 60px;
+		}
+	}
+}//.top-article
+
+
+
+/* top-movie
+================================================== */
+
+.top-movie {
+	padding: 0 0 120px;
+	position: relative;
+
+	@include pc {
+		padding: 0 20px 160px;
+	}
+
+	@include e(box) {
+		position: relative;
+	}//e(box)
+
+	@include e(character) {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		max-height: 300px;
+		margin-top: -145px;
+		margin-left: -145px;
+		overflow: hidden;
+
+		@include pc {
+			display: block;
+			top: -20px;
+			left: -84px;
+			max-height: none;
+			overflow: auto;
+			z-index: 15;
+			margin-top: 0;
+			margin-left: 0;
+		}
+
+		p {
+			@include QuickR;
+			color: $light-gray;
+			@include fz(10,15);
+			text-align: left;
+			position: absolute;
+			top: 90px;
+			left: 5px;
+
+			@include pc {
+				margin-top: 13px;
+				padding-left: 35px;
+				text-align: center;
+				position: static;
+				top: auto;
+				left: auto;
+			}
+		}
+	}//e(character)
+
+	@include e(trigger) {
+		width: 100%;
+		height: 100px;
+		z-index: -1;
+		background-image: url(/common/image/profile_trg.svg);
+		background-repeat: no-repeat;
+		background-position: right top;
+		background-size: 100px;
+
+		@include pc {
+			width: 130px;
+			height: 130px;
+			position: absolute;
+			top: 0;
+			right: 30px;
+			background-color: #000;
+			background-image: url(/common/image/profile_trg_txt.svg);
+			background-size: 130px;
+			border-radius: 50%;
+			transition: 0.3s ease;
+		}
+	}
+
+	@include e(ttl-img) {
+		width: 120px;
+		height: auto;
+		position: absolute;
+		top: 0;
+		right: 50%;
+		margin-top: -140px;
+		margin-right: 20px;
+
+		@include pc {
+			width: auto;
+			height: auto;
+			position: absolute;
+			right: 73px;
+			margin-top: 0;
+			margin-right: 0;
+		}
+	}//e(ttl-img)
+
+	@include e(lst) {
+		width: 100%;
+		margin: 0 auto 40px;
+		margin-top: 180px;
+		position: relative;
+		box-sizing: content-box;
+
+		@include pc {
+			width: 640px;
+			margin: 0 auto 60px;
+			padding-top: 0;
+			padding-left: 120px;
+		}
+
+		a {
+			@include deco;
+		}
+	}//e(lst)
+
+	@include e(img) {
+		width: 100%;
+		position: relative;
+
+		&:before {
+			content: '';
+			display: block;
+			padding-top: 56.25%;
+		}
+
+		i {
+			@include fz(120,120);
+			display: block;
+			color: #fff;
+			width: 120px;
+			height: 120px;
+			margin: auto;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+
+		img {
+			max-width: 100%;
+			width: 100%;
+		}
+	}//e(img)
+
+	@include e(txtarea) {
+		padding: 20px 20px 0;
+
+		@include pc {
+			padding: 20px 0 0;
+		}
+	}//e(txtarea)
+
+	@include e(copy) {
+		@include QuickB;
+		@include fz(14,21);
+		color: #000;
+		font-weight: bold;
+	}//e(copy)
+
+	@include e(ttl) {
+		@include QuickB;
+		@include fz(18,27);
+		color: #000;
+		font-weight: bold;
+	}//e(ttl)
+
+	@include e(date) {
+		@include QuickB;
+		@include fz(14,21);
+		color: $gray;
+	}//e(date)
+
+	.btn-wrap {
+		padding-left: 20px;
+		padding-right: 20px;
+
+		@include pc {
+			padding-left: 120px;
+			padding-right: 0;
+		}
+	}
+}//.top-movie
+
+.nobunaga {
+	margin-top: -100px;
+	padding-left: 45px;
+	z-index: 20;
+
+	@include pc {
+		margin-top: 0;
+		padding-left: 0;
+	}
+
+	img {
+		width: 255px;
+
+		@include pc {
+			width: auto;
+		}
+	}
+}
+
+.top-movie__character a:hover {
+	.top-movie__trigger {
+		@include pc {
+			background-color: $dark-gray;
+		}
+	}
+}
+
+
+
+/* top-about
+================================================== */
+
+.top-about {
+	width: 100%;
+	margin: 0 auto;
+	padding-bottom: 30px;
+	position: relative;
+
+	@include pc {
+		width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px 0 100px;
+	}//pc
+
+
+
+	@include e(body) {
+		display: block;
+
+		@include pc {
+			display: flex;
+			justify-content: flex-start;
+			position: relative;
+		}
+	}//e(body)
+
+	@include e(img) {
+		flex: 0 1 480px;
+		line-height: 0;
+
+		img {
+			width: 100%;
+			max-width: 100%;
+		}
+	}//e(img)
+
+	@include e(txtarea) {
+		padding: 20px 20px 0;
+		box-sizing: border-box;
+
+		@include pc {
+			flex: 0 1 560px;
+			padding: 0 0 0 60px;
+		}
+
+		.btn-wrap {
+			margin-top: 30px;
+
+			@include pc {
+				margin-top: 40px;
+			}
+		}
+	}//e(txtarea)
+
+	@include e(ttl) {
+		@include QuickB;
+		@include fz(20,30);
+		color: #000;
+		font-weight: bold;
+
+		@include pc {
+			@include fz(24,36);
+		}//PC
+	}//e(ttl)
+
+	@include e(author) {
+		@include QuickB;
+		@include fz(14,21);
+		color: #000;
+		font-weight: bold;
+		margin-bottom: 20px;
+
+		@include pc {
+			@include fz(16,24);
+		}//PC
+	}//e(copy)
+
+	@include e(txt) {
+		@include QuickR;
+		@include fz(16,24);
+		color: $gray;
+
+	}//e(copy)
+
+	a:not([class]) {
+		display: flex !important;
+		justify-content: flex-start;
+		@include alpha;
+	}
+}

@@ -1,0 +1,587 @@
+// TEXT.SCSS
+
+/* note（出典、引用など補足説明）
+================================================== */
+
+p.note {
+	@include QuickR;
+	@include fz(14,21);
+	color: $gray !important;
+	margin: 20px 0 0 0 !important;
+
+	a {
+		color: $gray !important;
+
+		&:after {
+			background-image: url(../image/blank.svg) !important;
+		}
+	}//a
+}
+
+ul.note {
+	margin: 20px 0 0 0 !important;
+
+	li {
+		@include QuickR;
+		@include fz(14,21);
+		color: $gray !important;
+
+		& + li {
+			margin-top: 6px;
+		}
+	}
+
+	a {
+		color: $gray !important;
+
+		&:after {
+			background-image: url(../image/blank.svg) !important;
+		}
+	}//a
+}
+
+
+
+
+
+/* list
+================================================== */
+
+ul.list {
+	margin: 26px 0;
+
+	li {
+		@include fz(16,26);
+
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 4px;
+			height: 4px;
+			margin: 0 6px 4px;
+			background-color: $text;
+			line-height: 26px;
+			vertical-align: middle;
+		}
+
+		& + li {
+			margin-top: 6px;
+		}
+	}
+}
+
+ol.list {
+	margin: 26px 0;
+	counter-reset: desi;
+
+	li {
+		@include fz(16,26);
+
+		&:before {
+			counter-increment: desi;
+			content: counter(desi)'.';
+			display: inline-block;
+			width: 1em;
+		}
+
+		& + li {
+			margin-top: 6px;
+		}
+	}
+}
+
+
+
+ul.list-space,
+ol.list-space {
+	margin: 26px 0;
+
+	li {
+		@include fz(16,26);
+		list-style-type: none;
+
+		& + li {
+			margin-top: 6px;
+		}
+
+		span {
+			@include fz(20,26);
+			vertical-align: top;
+		}
+	}
+}
+
+
+/* ast（注釈付きリスト）
+================================================== */
+
+ul:not([class]),
+ol:not([class]) {
+	li.ast {
+		padding-left: 2.5em;
+
+		&:before {
+			content: '（注）';
+			display: inline-block;
+			width: 2.5em;
+			margin-left: -2.5em;
+			// margin-left: -1.5em;
+			// margin-right: 0.5em;
+		}
+	}
+}
+
+.note.ast {
+	padding-left: 3em;
+
+	&:before {
+		content: '（注）';
+		display: inline-block;
+		width: 3em;
+		margin-left: -3em;
+		// margin-left: -1.5em;
+		// margin-right: 0.5em;
+	}
+}
+
+ul.ast {
+	margin: 24px 0;
+
+	li {
+		@include fz(14,21);
+		margin-bottom: 10px;
+		padding-left: 2.5em;
+
+		& + li {
+			margin-top: 6px;
+		}
+
+		&:before {
+			content: '（注）';
+			display: inline-block;
+			width: 2.5em;
+			margin-left: -2.5em;
+			// margin-right: 0.5em;
+		}
+	}//li
+
+	a[target="_blank"] {
+		&:after {
+			height: 12px;
+			background-size: 12px;
+		}
+	}
+}//ul.ast
+
+ol.ast {
+	margin: 24px 0;
+	padding: 20px 0;
+	counter-reset: ast;
+
+	li {
+		@include fz(14,21);
+		color: $gray;
+		margin-bottom: 10px;
+		padding-left: 2.5em;
+
+		&:before {
+			@include QuickB;
+			counter-increment: ast;
+			content: '(注'counter(ast) ')';
+			display: inline-block;
+			width: 2.5em;
+			margin-left: -2.5em;
+			// margin-right: 0.5em;
+		}
+	}
+
+	a[target="_blank"] {
+		&:after {
+			height: 12px;
+			background-size: 12px;
+		}
+	}
+}
+
+
+
+/* refer（記事内 参考資料 figure,tableなど）
+================================================== */
+
+.refer {
+	margin: 20px -20px;
+	padding: 30px 20px;
+	background-color: #fff;
+	position: relative;
+
+	@include pc {
+		margin: 40px 0 40px;
+		padding: 40px 30px;
+	}
+
+	// &:last-child {
+	// 	margin-top: 0;
+	// }
+
+	& > p:not([class]) {
+		@include fz(16,26);
+		margin-bottom: 26px;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 0px;
+		height: 0px;
+		border: 0px solid #f0f0f0;
+		border-top-color: $bg-gray;
+		border-right-color: $bg-gray;
+		background-color: $bg-gray;
+		overflow: hidden;
+		border-width: 10px;
+
+		@include pc {
+			border-width: 15px;
+		}
+	}
+
+	figure {
+		margin: 0;
+
+		&+figure {
+			margin-top: 40px;
+		}
+	}
+
+	figcaption {
+		@include fz(16,26);
+	}
+
+	figcaption + img,
+	img + figcaption {
+		margin-top: 20px;
+	}
+}
+
+
+
+/* table
+================================================== */
+
+table.table {
+	border-collapse: collapse;
+	width: 100%;
+
+	caption {
+		@include QuickR;
+		@include fz(18,28);
+		margin-bottom: 25px;
+
+		@include pc {
+			@include fz(16,26);
+		}
+	}
+
+	tbody {
+		border-top: dotted 1px $text;
+	}
+
+	th,td {
+		@include QuickR;
+		padding: 10px 0;
+		border-bottom: dotted 1px $text;
+		// vertical-align: top;
+		// border-style: solid;
+		// border-width: 0px 0px 1px;
+		// border-image: url(/common/image/dot.svg) 0 0 1 repeat;
+	}
+
+	th {
+		padding: 10px 1em 10px 0;
+		white-space: nowrap;
+	}
+
+	td {
+		padding: 10px 0;
+	}
+
+}
+
+
+
+/* summary（MV下 まとめ）
+================================================== */
+
+.summary {
+	width: calc(100% + 40px);
+	padding: 30px 20px;
+	border: solid 2px #000;
+	margin: 26px -20px;
+	position: relative;
+	background-color: #fff;
+	border-top: solid 2px #000;
+	border-bottom: solid 2px #000;
+	border-left: none;
+	border-right: none;
+	box-sizing: border-box;
+
+	@include pc {
+		width: 100%;
+		margin: 26px 0;
+		border-left: solid 2px #000;
+		border-right: solid 2px #000;
+	}
+
+	@include e(ttl) {
+		@include QuickB;
+		@include fz(16,26);
+		padding: 0 8px;
+		color: #000;
+		background-color: #fff;
+		position: absolute;
+		top: -3px;
+		left: 18px;
+		z-index: 10;
+
+		span {
+			display: block;
+			float: left;
+			margin-top: -12px;
+			@include clearfix;
+		}
+	}
+
+	& + .note {
+		text-align: right;
+	}
+
+	ul {
+		margin: 0 !important;
+	}
+
+	li {
+		@include fz(16,26);
+		padding-left: 2em;
+		position: relative;
+
+		& + li {
+			margin-top: 6px;
+		}
+
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 32px;
+			height: 26px;
+			@include fz(16,26);
+			margin-left: -2em;
+			vertical-align: top;
+			background-image: url(/common/image/light.svg);
+			background-repeat: no-repeat;
+			background-size: 24px;
+			background-position: left top;
+		}//before
+	}
+}
+
+.summary.frog-m {
+	margin-top: 60px;
+
+	&:after {
+		content: '';
+		display: block;
+		width: 40px;
+		height: 53px;
+		background-image: url(/common/image/enefrog_matome.svg);
+		background-repeat: no-repeat;
+		background-size: 40px 53px;
+		background-position: center;
+		position: absolute;
+		top: -42px;
+		right: 20px;
+
+		@include pc {
+			right: 30px;
+		}
+	}//after
+}
+
+
+
+/* pickup（MOVIE記事内）
+================================================== */
+
+.pickup {
+	width: 100%;
+	margin: 30px 0;
+	padding: 18px;
+	border: solid 2px #000;
+	box-sizing: border-box;
+
+	@include pc {
+		// display: flex;
+		// flex-flow: row nowrap;
+		margin: 40px 0;
+		overflow: hidden;
+	}//pc
+
+	@include e(img) {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 20px;
+
+		@include pc {
+			// flex: 1 0 160px;
+			width: 160px;
+			margin-bottom: 0;
+			margin-right: 20px;
+			float: left;
+			@include clearfix;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		figcaption {
+			@include QuickR;
+			color: $light-gray;
+			@include fz(10,15);
+			text-align: center;
+			margin-top: 10px;
+
+			@include pc {
+				margin-top: 13px;
+				text-align: center;
+				position: static;
+			}
+		}
+	}//e(img)
+
+	@include e(info) {
+		width: 100%;
+
+		@include pc {
+			width: 500px;
+			float: left;
+			@include clearfix;
+		}
+
+		dt {
+			@include fz(16,24);
+			color: #000;
+			font-weight: bold;
+
+			span {
+				@include fz(14,24);
+			}
+		}
+
+		dd {
+			@include fz(14,21);
+			color: $text;
+
+			& + dd {
+				margin-top: 21px;
+			}
+		}
+	}//e(info)
+
+	a {
+		@include fz(14,21);
+		color: #000;
+
+		&:after {
+			background-image: url(/common/image/blank_bk.svg);
+		}
+	}
+}//.pickup
+
+
+
+/* author
+================================================== */
+
+.author {
+	width: 100%;
+	margin: 30px 0;
+	padding: 18px;
+	border: solid 2px #000;
+	box-sizing: border-box;
+
+	@include pc {
+		display: flex;
+		flex-flow: row nowrap;
+		margin: 40px 0;
+	}//pc
+
+	@include e(img) {
+		// max-width: 100%;
+		max-width: 120px;
+		max-height: 120px;
+		text-align: center;
+		margin: 0 auto 20px;
+		border-radius: 50%;
+		overflow: hidden;
+
+		@include pc {
+			flex: 1 0 120px;
+			margin: 0 20px 0 0;
+			// margin-bottom: 0;
+			// margin-right: 20px;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		figcaption {
+			@include QuickR;
+			color: $light-gray;
+			@include fz(10,15);
+			text-align: center;
+			margin-top: 10px;
+
+			@include pc {
+				margin-top: 13px;
+				text-align: center;
+				position: static;
+			}
+		}
+	}//e(img)
+
+	@include e(info) {
+
+		dt {
+			@include fz(16,24);
+			color: #000;
+			font-weight: bold;
+
+			span {
+				@include fz(14,24);
+			}
+		}
+
+		dd {
+			@include fz(14,21);
+			color: $text;
+
+			& + dd {
+				margin-top: 21px;
+			}
+		}
+	}//e(info)
+
+	a {
+		@include fz(14,21);
+		color: #000;
+
+		&:after {
+			background-image: url(/common/image/blank_bk.svg);
+		}
+	}
+}//.author

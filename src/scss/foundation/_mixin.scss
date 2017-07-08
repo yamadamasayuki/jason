@@ -1,0 +1,167 @@
+//@mixin fz($size)
+//==================================================
+@mixin fz($size:16,$lh:26) {
+	font-size: $size * 1px;
+	font-size: ( $size / 16 ) * 1rem;
+	line-height: $lh / $size;
+}
+
+//@mixin Noto
+//==================================================
+
+//Japanese
+@mixin JPfont {
+	font-family: 'Hiragino Kaku Gothic Pro', 'Hiragino Kaku Gothic ProN', 'sans-serif';
+	font-style: normal;
+}
+
+
+
+//Quicksand Light
+@mixin QuickL {
+	font-family: 'Quicksand','Hiragino Kaku Gothic Pro', 'Hiragino Kaku Gothic ProN',sans-serif;
+	font-style: normal;
+	font-weight: 300;
+}
+
+//Quicksand Reguler
+@mixin QuickR {
+	font-family: 'Quicksand','Hiragino Kaku Gothic Pro', 'Hiragino Kaku Gothic ProN',sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+
+//Quicksand Medium
+@mixin QuickM {
+	font-family: 'Quicksand','Hiragino Kaku Gothic Pro', 'Hiragino Kaku Gothic ProN',sans-serif;
+	font-style: normal;
+	font-weight: 500;
+}
+
+//Quicksand Bold
+@mixin QuickB {
+	font-family: 'Quicksand','Hiragino Kaku Gothic Pro', 'Hiragino Kaku Gothic ProN',sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}
+
+
+
+//@mixin mobile
+//==================================================
+@mixin mobile {
+	@media screen and (max-width: 767px) {
+		@content;
+	}
+}
+@mixin pc {
+	@media screen and (min-width: 768px) {
+		@content;
+	}
+}
+
+//@mixin e($name)/m($name)
+//==================================================
+@mixin e($name) {
+	@at-root &__#{$name} {
+		@content;
+	}
+}
+
+@mixin m($name) {
+	@at-root &--#{$name} {
+		@content;
+	}
+}
+
+//@mixin imgreplace
+//==================================================
+@mixin imgreplace {
+	overflow: hidden;
+	text-indent: 110%;
+	white-space: nowrap;
+	word-wrap: normal;
+}
+
+
+//@mixin clearfix
+//==================================================
+@mixin clearfix {
+	&:after {
+		content: "";
+		clear: both;
+		display: block;
+		height: 0;
+	}
+}
+
+//@mixin hover
+//==================================================
+@mixin alpha {
+	display: block;
+	transition: 0.3s ease;
+
+	@include pc {
+		&:hover {
+			opacity: 0.8;
+		}
+	}//pc
+}//alpha
+
+@mixin deco {
+	color: $text;
+
+	@include pc {
+		&:hover {
+			text-decoration: underline;
+		}
+	}//pc
+}//alpha
+
+@mixin btn-hover($e-color:#000) {
+	display: block;
+	transition: 0.3s ease;
+	background-color: $e-color;
+	box-sizing: border-box;
+
+	i {
+		transition: 0.3s ease;
+	}
+
+	@include pc {
+
+		&:hover {
+			background-color: $dark-gray;
+
+			i {
+				transform: translateX(10px);
+			}
+		}
+	}//pc
+}//btn-hover
+
+@mixin btn-color($elm-color:#000) {
+	display: block;
+	transition: 0.3s ease;
+	background-color: $elm-color;
+	border: solid 2px transparent;
+	box-sizing: border-box;
+
+	@include pc {
+		&:hover {
+			color: $elm-color !important;
+			background-color: transparent;
+			border: solid 2px $elm-color;
+		}
+	}//pc
+}//btn-hover
+
+@mixin scale {
+	transition: 0.3s ease;
+
+	@include pc {
+		&:hover {
+			transform: scale(1.1);
+		}
+	}//pc
+}//scale

@@ -1,0 +1,20 @@
+// MV
+
+.l-mv {
+	width: 100%;
+	padding: 0 20px;
+
+	@include e(body) {
+		width: 100%;
+		max-width: $max-width;
+		margin: 0 auto;
+	}//e(body)
+
+	@include e(slider) {
+		width: 100%;
+	}//e(slider)
+
+	@include e(item) {
+
+	}//e(item)
+}

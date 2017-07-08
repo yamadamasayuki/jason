@@ -1,0 +1,24 @@
+// SECTION.SCSS
+
+/* section
+================================================== */
+
+.a-section {
+	& + .a-section {
+		margin-top: 60px;
+
+		@include pc {
+			margin-top: 80px;
+		}
+	}
+}
+
+.a-subsection {
+	& + .a-section {
+		margin-bottom: 30px;
+
+		@include pc {
+			margin-top: 40px;
+		}
+	}
+}

@@ -1,0 +1,73 @@
+// BASE.SCSS
+
+/* Sticky Footer
+================================================== */
+html, body {
+	height: 100%;
+	margin: 0;
+	min-width: 320px;
+}
+
+
+
+/* BODY
+================================================== */
+body {
+	min-width: 320px;
+	width: 100%;
+	@include fz(16,20);
+	@include QuickR;
+	font-feature-settings: "pkna";//「かな」のみプロポーショナルメトリクスを有効<-Safari10対策
+
+	//For Analysis tag
+	> iframe,
+	> img,
+	> div:not([class]) > iframe,
+	> div:not([class]) > img {
+		display: none;
+	}
+}
+
+// a {
+// 	color: #000;
+// 	text-decoration: none;
+// 	cursor: pointer;
+//
+// 	&[target="_blank"] {
+// 		&:after {
+// 			content: '';
+// 			display: inline-block;
+// 			width: 28px;
+// 			height: 14px;
+// 			text-decoration: none;
+// 			background-image: url(../image/blank_bk.svg);
+// 			background-repeat: no-repeat;
+// 			background-size: 14px;
+// 			background-position: center;
+// 		}
+//
+// 		&.ico-sm {
+// 			@extend a[target="_blank"];
+// 			&:after {
+// 				height: 12px;
+// 				background-size: 12px;
+// 			}
+// 		}//.ico-sm
+// 	}
+// }//a
+
+li {
+	list-style-type: none;
+}
+
+figure {
+	text-align: center;
+
+	img {
+		max-width: 100%;
+	}
+}
+
+img {
+	vertical-align: top;
+}

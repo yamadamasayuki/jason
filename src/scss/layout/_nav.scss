@@ -1,0 +1,31 @@
+// NAV
+
+.l-nav {
+
+	@include e(lst) {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-content: flex-start;
+	}//e(lst)
+
+	@include e(item) {
+		flex: 0 1 136px;
+
+		a {
+			@include fz(14,22);
+			color: $text;
+			text-decoration: none;
+			font-weight: 700;
+			display: block;
+			padding: 14px 0;
+		}
+
+		span {
+			@include fz(12,22);
+			color: $text;
+			margin-left: 1em;
+			font-weight: 400;
+		}
+	}//e(item)
+}

@@ -1,0 +1,19 @@
+// HEADER.SCSS
+
+.l-header {
+	width: 100%;
+	padding: 0 20px;
+
+	@include e(body) {
+		width: 100%;
+		max-width: $max-width;
+		margin: 0 auto;
+		text-align: center;
+	}//e(body)
+
+	@include e(ttl) {
+		padding: 24px 0;
+		border-bottom: solid 1px #000;
+	}
+
+}//.l-header

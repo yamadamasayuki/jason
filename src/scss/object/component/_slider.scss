@@ -1,0 +1,78 @@
+// SLIDER.SCSS
+
+.bx-pager {
+	font-size: 0;
+	text-align: center;
+	display: block;
+
+	@include pc {
+		display: none;
+	}
+
+	@include e(item) {
+		display: inline-block;
+		padding: 5px;
+
+		& + li {
+			margin-left: 10px;
+		}
+	}//e(item)
+
+	@include e(link) {
+		display: block;
+		width: 15px;
+		height: 15px;
+		border: solid #000 4px;
+		border-radius: 50%;
+		position: relative;
+
+		&:before {
+			content: '';
+			display: block;
+			width: 15px;
+			height: 15px;
+			background-color: #000;
+			border-radius: 50%;
+			transform: scale(0);
+			position: absolute;
+			top: -4px;
+			left: -4px;
+		}
+	}//e(link)
+}//.bx-pager
+
+.bx-pager__link.active {
+	&:before {
+		transform: scale(1);
+		}
+}
+
+.bx-controls {
+	margin-top: 30px;
+	position: relative;
+}
+
+.bx-prev,
+.bx-next {
+	display: block;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 0;
+
+	@include pc {
+		display: none;
+	}
+}
+
+.bx-prev{
+	background: url(../image/arrow-left.svg) no-repeat center;
+	left: 50%;
+	margin-left: -140px;
+}
+
+.bx-next{
+	background: url(../image/arrow-right.svg) no-repeat center;
+	right: 50%;
+	margin-right: -140px;
+}
