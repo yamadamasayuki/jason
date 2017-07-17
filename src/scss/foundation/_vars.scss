@@ -3,11 +3,17 @@
 /* COLORS
 ================================================== */
 
+$orange: #f3bd00;
+$red: #ff3f3f;
+$cyan: #00b7ee;
+$green: #06d806;
+$blue: #0707be;
+$recruit-color: #005e15;
+
 // grays
 $dark-gray: #4c4c4c;
-$gray: #666;
-$light-gray: #999;
-$bg-gray: #f7f7f7;
+$gray: #bfbfbf;
+$bg-gray: #f5f5f5;
 
 // text
 $text: #333;
@@ -21,7 +27,9 @@ $tw-color: #55acee;
 /* COMPONENTS
 ================================================== */
 
-$max-width: 960px;
+$max-width: 1280px + 40px;
+$max-inner: 980px;
+
 
 
 

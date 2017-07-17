@@ -1,26 +1,31 @@
 @charset "UTF-8";
 
-@import "foundation/ress";
-@import "foundation/extend";
-@import "foundation/mixin";
-@import "foundation/vars";
-@import "foundation/font";
-@import "foundation/base";
-@import "foundation/keyframes";
+@import url('https://fonts.googleapis.com/css?family=Kreon:300,400,700');
 
+@import "foundation/ress";
+@import "foundation/vars";
+@import "foundation/mixin";
+@import "foundation/base";
+// @import "foundation/extend";
+// @import "foundation/keyframes";
+// @import "foundation/plugins";
+
+// @import "layout/page";
+@import "layout/content";
 @import "layout/header";
 @import "layout/footer";
 @import "layout/nav";
-@import "layout/mv";
+// @import "layout/breadcrumb";
+@import "layout/section";
+// @import "layout/column";
+// @import "layout/contact";
+// @import "layout/pagetop";
 
-// @import "object/component/label";
 @import "object/component/button";
-@import "object/component/slider";
 
 @import "object/project/top";
 
-// @import "utility/color";
-// @import "utility/list";
-// @import "utility/section";
-// @import "utility/text";
-// @import "utility/utility";
+// @import "object/utility/margin";
+// @import "object/utility/padding";
+// @import "object/utility/color";
+@import "object/utility/utility";

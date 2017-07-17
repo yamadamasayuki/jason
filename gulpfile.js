@@ -4,21 +4,24 @@ var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
 var csscomb = require('gulp-csscomb');
 var uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
 
 gulp.task('sass', function(){
 	gulp.src('./src/scss/**/*.scss')
 		.pipe(plumber())
+		.pipe(sourcemaps.init())
 		.pipe(sass({
 			style : 'expanded'
 		}))
 		.pipe(csscomb())
 		.pipe(postcss([
 			require('autoprefixer')({
-				browsers: ['last 4 versions','ff ESR','ie >= 9','iOS >= 8']
+				browsers: ['last 4 versions','ff ESR','ie 9']
 			}),
 			require('css-mqpacker')
 		]))
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('./htdocs/common/css/'))
 });
 

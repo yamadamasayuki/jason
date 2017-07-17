@@ -21,25 +21,24 @@
 <meta name="format-detection" content="telephone=no">
 
 <!-- Favicon -->
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" href="/favicon.ico">
-<link rel="apple-touch-icon" href="imgcommon/apple-touch-icon.png">
 
 <!-- CSS -->
-<link rel="stylesheet" href="common/css/style.css">
+<link rel="stylesheet" href="/common/css/style.css">
 <!--[if lt IE 9]><script src="common/js/html5shiv.min.js" charset="UTF-8"></script><![endif]-->
 </head>
 <body>
 	<header class="l-header">
 		<div class="l-header__body">
-			<h1 class="l-header__ttl"><img src="/common/img/logo.png" alt=""></h1>
+			<h1 class="l-header__ttl"><a href="/"><img src="/common/img/logo.png" alt=""></a></h1>
 			<nav class="l-header__nav l-nav">
 				<ul class="l-nav__lst">
-					<li class="l-nav__item"><a href="">ホーム<span>Home</span></a></li>
-					<li class="l-nav__item"><a href="">ごあいさつ<span>Message</span></a></li>
-					<li class="l-nav__item"><a href="">授業料<span>Price</span></a></li>
-					<li class="l-nav__item"><a href="">アクセス<span>Access</span></a></li>
-					<li class="l-nav__item"><a href="">求人情報<span>Recruit</span></a></li>
+					<li class="l-nav__item"><a href="/">ホーム<span>Home</span></a></li>
+					<li class="l-nav__item"><a href="#message">ごあいさつ<span>Message</span></a></li>
+					<li class="l-nav__item"><a href="#news">おしらせ<span>News</span></a></li>
+					<li class="l-nav__item"><a href="#access">アクセス<span>Access</span></a></li>
+					<li class="l-nav__item"><a href="/price/">授業料<span>Price</span></a></li>
+					<li class="l-nav__item"><a href="/recruit/">求人情報<span>Recruit</span></a></li>
 				</ul>
 			</nav>
 		</div>
@@ -53,45 +52,118 @@
 					<div class="l-mv__item"><img src="/img/top02.jpg" alt=""></div>
 					<div class="l-mv__item"><img src="/img/top05.jpg" alt=""></div>
 				</div>
+				<ul id="pager" class="p-pager">
+					<li class="p-pager__item"><a data-slide-index="0" class="active">1</a></li>
+					<li class="p-pager__item"><a data-slide-index="1">2</a></li>
+					<li class="p-pager__item"><a data-slide-index="2">3</a></li>
+					<li class="p-pager__item"><a data-slide-index="3">4</a></li>
+				</ul>
 			</div>
 		</div>
 		<div class="l-content">
-			<section class="l-section p-msg">
-
+			<section id="message" class="p-message">
+				<div class="p-message__header">
+					<h3>学習を通して自らの可能性を拡げ<br><span>3C</span>を実現させる</h3>
+				</div>
+				<div class="p-message__body">
+					<div class="p-message__copy">
+						<h3>
+							<span class="p-conf">Confidence</span>
+							<span class="p-chng">Challenge</span>
+							<span class="p-comp">Completion</span>
+						</h3>
+					</div>
+					<div class="p-message__txt">
+						<p>21世紀に入り、グローバル化はさらなる加速を見せています。数年前までは、英語が出来ることが大きなアドバンテージとなっていました。しかしながら、昨今では英語が出来るだけでは決してアドバンテージとはなり得ない時代となりました。<br>ジェイソン学習塾は、英会話教室からスタートしましたが、これから世界で活躍できるグローバル人材を育成していく上で“学習すること”を追求し、学習塾とさせていただきました。</p>
+						<p>ジェイソン学習塾が目指すのは学習を通して<br><strong class="u-strong">“自信を持つこと”</strong><strong class="u-strong">“常に挑戦すること”</strong><strong class="u-strong">“目標を完成させること”</strong><br>この3Cをしっかり持った人材こそが、これからの日本を担っていくものと信じ指導しております。それこそ が、ジェイソン学習塾が目指す塾の姿であり使命であります。<br>短期的な成績UPのみは、本当の意味で生徒の為とは言えません。長期的な視点を持ち自分自身での学習方法、つまりは<strong class="u-strong">“生涯学び続ける力”</strong>を付けることこそが真の学習だと考えております。学習を通して1人でも多くの生徒様・ 保護者様のお役に立てることを願っております。</p>
+					</div>
+				</div>
 			</section>
-			<section class="l-section p-news">
-				<div class="p-news__main">
+			<section id="news" class="l-section l-section--col2">
+				<div class="l-section__main">
 					<div class="l-section__header">
 						<h2 class="l-section__ttl">What's New</h2>
 						<p>ジェイソンからのお知らせ</p>
 					</div>
 					<div class="l-section__body">
-
+						<div class="p-news">
+							<a class="p-news__item" href="">
+								<p class="p-news__date">2017.01.01</p>
+								<span class="p-news__label p-news__label--jhs3">中３</span>
+								<p class="p-news__desc">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+							</a>
+							<a class="p-news__item" href="">
+								<p class="p-news__date">2017.01.01</p>
+								<span class="p-news__label p-news__label--jhs2">中２</span>
+								<p class="p-news__desc">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+							</a>
+							<a class="p-news__item" href="">
+								<p class="p-news__date">2017.01.01</p>
+								<span class="p-news__label p-news__label--jhs1">中１</span>
+								<p class="p-news__desc">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+							</a>
+							<a class="p-news__item" href="">
+								<p class="p-news__date">2017.01.01</p>
+								<span class="p-news__label p-news__label--hs">高校生</span>
+								<p class="p-news__desc">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+							</a>
+							<a class="p-news__item" href="">
+								<p class="p-news__date">2017.01.01</p>
+								<span class="p-news__label p-news__label--es">小学生</span>
+								<p class="p-news__desc">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+							</a>
+							<a class="p-news__btn c-btn" href="/news/">More<span>一覧を見る</span></a>
+						</div><!-- /.p-news -->
+					</div><!-- /.l-section__body -->
+				</div><!-- /.l-section__main -->
+				<div class="l-section__sub">
+					<div class="p-recruit">
+						<h3 class="p-recruit__ttl">Recruit</h3>
+						<div class="p-recruit__body">
+							<p class="p-recruit__txt">ジェイソン学習塾では、子供たちと共に学び、学習の楽しさを教えられる講師を募集しております。</p>
+							<a class="p-recruit__btn c-btn" href="/recruit/">詳しくみる</a>
+						</div>
 					</div>
-				</div>
-				<div class="p-news__sub">
-					<div class="c-bnr">
-						<h3 class="c-bnr__ttl">Recruit</h3>
-						<p>ジェイソン学習塾では、子供たちと共に学び、学習の楽しさを教えられる講師を募集しております。</p>
-						<a href="#">詳しくみる</a>
-					</div>
-				</div>
+				</div><!-- /.l-section__sub -->
 			</section>
-			<section class="l-section p-access">
+			<section id="access" class="l-section">
 				<div class="l-section__header">
 					<h2 class="l-section__ttl">ACCSESS</h2>
 					<p>アクセス</p>
 				</div>
+				<div class="l-section__body p-access">
+					<div class="p-access__map"></div>
+					<div class="p-access__info">
+						<div class="p-access__img"></div>
+						<dl class="p-access__txt">
+							<dt>ジェイソン学習塾</dt>
+							<dd>住所：〒349-0121 埼玉県蓮田市関山2-2-14 高野ビル1F</dd>
+							<dd>TEL：090-2443-6049</dd>
+							<dd>FAX：048-797-6996</dd>
+						</dl>
+					</div>
+				</div>
 			</section>
 		</div>
 	</main>
-	<footer class="l-footer">
+	<div class="l-contact">
+		<div class="l-contact__body">
 
+		</div>
+	</div>
+	<footer class="l-footer">
+		<div class="l-footer__body">
+			<div class="l-footer__sns">
+				<a href=""><img src="/img/ico_facebook.svg" alt=""></a>
+				<a href=""><img src="/img/ico_twitter.svg" alt=""></a>
+				<a href=""><img src="/img/ico_instagram.svg" alt=""></a>
+			</div>
+			<p class="l-footer__copyright">Copyright &copy; 2017 Jason.Cs All Rights Reserved.</p>
+		</div>
 	</footer>
 	<!-- Javascript -->
 	<script src="/common/js/jquery.1.12.4.min.js" charset="UTF-8"></script>
 	<script src="/common/js/plugins.js" charset="UTF-8"></script>
-	<script src="/common/js/top.js" charset="UTF-8"></script>
 	<script src="/common/js/common.js" charset="UTF-8"></script>
 </body>
 </html>

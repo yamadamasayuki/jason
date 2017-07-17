@@ -16,7 +16,7 @@ body {
 	min-width: 320px;
 	width: 100%;
 	@include fz(16,20);
-	@include QuickR;
+	@include JPfont;
 	font-feature-settings: "pkna";//「かな」のみプロポーショナルメトリクスを有効<-Safari10対策
 
 	//For Analysis tag
@@ -28,33 +28,32 @@ body {
 	}
 }
 
-// a {
-// 	color: #000;
-// 	text-decoration: none;
-// 	cursor: pointer;
-//
-// 	&[target="_blank"] {
-// 		&:after {
-// 			content: '';
-// 			display: inline-block;
-// 			width: 28px;
-// 			height: 14px;
-// 			text-decoration: none;
-// 			background-image: url(../image/blank_bk.svg);
-// 			background-repeat: no-repeat;
-// 			background-size: 14px;
-// 			background-position: center;
-// 		}
-//
-// 		&.ico-sm {
-// 			@extend a[target="_blank"];
-// 			&:after {
-// 				height: 12px;
-// 				background-size: 12px;
-// 			}
-// 		}//.ico-sm
-// 	}
-// }//a
+a {
+	text-decoration: none;
+	cursor: pointer;
+
+	&[target="_blank"] {
+		&:after {
+			content: '';
+			display: inline-block;
+			width: 28px;
+			height: 14px;
+			text-decoration: none;
+			background-image: url(../image/blank_bk.svg);
+			background-repeat: no-repeat;
+			background-size: 14px;
+			background-position: center;
+		}
+
+		&.ico-sm {
+			@extend a[target="_blank"];
+			&:after {
+				height: 12px;
+				background-size: 12px;
+			}
+		}//.ico-sm
+	}
+}//a
 
 li {
 	list-style-type: none;
@@ -71,3 +70,4 @@ figure {
 img {
 	vertical-align: top;
 }
+

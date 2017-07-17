@@ -1,31 +1,85 @@
-// NAV
+// NAV.SCSS
 
 .l-nav {
+	display: none;
+	width: 100%;
+
+	@include pc {
+		display: block;
+		border-top: solid 1px #000;
+	}
 
 	@include e(lst) {
 		display: flex;
-		flex-flow: row nowrap;
+		flex-flow: column wrap;
 		justify-content: center;
-		align-content: flex-start;
+		align-items: flex-start;
+
+		@include pc {
+			flex-flow: row nowrap;
+		}
 	}//e(lst)
 
 	@include e(item) {
-		flex: 0 1 136px;
+		padding-left: 1px;
+		position: relative;
+
+		&:not(:first-child):before {
+			width: 1px;
+			height: 20px;
+			margin: auto;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			background-color: $gray;
+
+			@include pc {
+				content: '';
+				display: block;
+			}
+		}
 
 		a {
-			@include fz(14,22);
-			color: $text;
-			text-decoration: none;
-			font-weight: 700;
 			display: block;
-			padding: 14px 0;
+			@include fz(16,20);
+			color: #000;
+			font-weight: 700;
+			padding: 14px 16px;
+			text-align: center;
+			letter-spacing: 0.05em;
+			position: relative;
+
+			@include pc {
+				&:hover {
+					&:after {
+						transform: scale(1,1);
+					}
+				}//hover
+			}//pc
+
+			&:after {
+				content: '';
+				display: block;
+				width: calc(100% - 32px);
+				height: 1px;
+				margin: auto;
+				background-color: $gray;
+				position: absolute;
+				bottom: 8px;
+				left: 0;
+				right: 0;
+				transform: scale(0,1);
+				transform-origin: center;
+				transition: .3s ease;
+			}
 		}
 
 		span {
-			@include fz(12,22);
-			color: $text;
-			margin-left: 1em;
-			font-weight: 400;
+			@include KreonR;
+			@include fz(12,20);
+			margin-left: 8px;
+			letter-spacing: 0.05em;
 		}
 	}//e(item)
 }

@@ -1,1 +1,51 @@
 // FOOTER.SCSS
+
+.l-footer {
+	// background-color: $gray;
+
+	@include e(body) {
+		width: 100%;
+		max-width: $max-inner;
+		margin: auto;
+		padding: 8px 20px;
+		overflow: hidden;
+		border-top: solid 1px #000;
+		text-align: center;
+
+		@include pc {
+			padding: 16px 20px;
+		}
+	}//e(body)
+
+	@include e(sns) {
+		@include fz(20,20);
+		text-align: center;
+
+		@include pc {
+			float: left;
+			@include clearfix;
+		}
+
+		a {
+			padding: 4px 8px;
+
+			img {
+				width: auto;
+				height: 20px;
+			}
+		}
+	}//e(sns)
+
+	@include e(copyright) {
+		display: inline-block;
+		@include KreonL;
+		@include fz(12,20);
+		margin-top: 8px;
+
+		@include  pc {
+			margin-top: 0;
+			float: right;
+			@include clearfix;
+		}
+	}//e(copyright)
+}//.l-sitemap

@@ -1,0 +1,88 @@
+// SECTION.SCSS
+
+.l-section {
+	width: 100%;
+	max-width: $max-inner;
+	margin: 0 auto;
+	padding: 40px 20px 0;
+
+	@include m(col2) {
+		padding: 40px 0 0;
+
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		align-items: stretch;
+
+		@include pc {
+			padding: 80px 0 0;
+		}
+	}//m(col2)
+
+	@include e(main) {
+		width: 100%;
+		padding: 0 20px;
+
+		@include pc {
+			width: 728 / 980 * 100%;
+		}
+
+		.l-section__body {
+			padding: 0;
+		}
+	}//e(main)
+
+	@include e(sub) {
+		display: none;
+		width: 252 / 980 * 100%;
+		padding-right: 20px;
+
+		@include pc {
+			display: block;
+		}
+	}//e(sub)
+
+	@include e(header) {
+		border-bottom: solid 3px $orange;
+
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+
+		@include pc {
+			padding-right: 28px;
+
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			align-items: flex-end;
+		}
+
+		p {
+			display: inline-block;
+			@include fz(14,20);
+			font-weight: 700;
+			padding-bottom: 8px;
+
+			@include pc {
+				@include fz(18,18);
+			}
+		}
+	}//e(header)
+
+	@include e(body) {
+		width: 100%;
+		max-width: $max-inner;
+		margin: 0 auto;
+	}//e(body)
+
+	@include e(ttl) {
+		@include KreonB;
+		@include fz(28,36);
+
+		@include pc {
+			@include fz(48,48);
+			display: inline-block;
+		}
+	}//e(ttl)
+}//.l-section

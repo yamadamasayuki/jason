@@ -1,0 +1,33 @@
+// BREADCRUMB.SCSS
+
+.l-breadcrumb {
+	padding: 16px 100px;
+
+	meta {
+		display: none;
+	}
+
+	span[property="name"] {
+		@include fz(12,18);
+		color: #000;
+		padding: 0 1em;
+	}
+
+	a {
+		span[property="name"] {
+			text-decoration: underline;
+		}
+
+		@include pc {
+			&:hover {
+				span[property="name"] {
+					text-decoration: none;
+				}
+			}
+		}
+	}//
+
+	@include e(top) {
+		padding-left: 0 !important;
+	}
+}//.l-breadcrumb

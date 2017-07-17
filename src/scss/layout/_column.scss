@@ -1,0 +1,26 @@
+// COLUMN.SCSS
+
+.l-col2 {
+	width: 100%;
+
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+
+	& > div {
+		width: 50%;
+	}
+
+	.c-olst__txtarea {
+		padding: 0 24px 0 48px;
+	}
+
+	@include m(reverse) {
+		flex-flow: row-reverse nowrap;
+
+		.c-olst__txtarea {
+			padding: 0 72px 0 0;
+		}
+	}
+}

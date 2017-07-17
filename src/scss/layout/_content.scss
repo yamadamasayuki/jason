@@ -1,0 +1,27 @@
+// CONTENT.SCSS
+
+.l-mv,
+.l-content {
+	width: 100%;
+	max-width: $max-width;
+	margin: 0 auto;
+}
+
+.l-mv {
+
+	@include e(body) {
+		width: 100%;
+		max-width: $max-inner;
+		margin: 0 auto;
+	}//e(body)
+
+	@include e(item) {
+		img {
+			width: 100%;
+		}
+	}//e(item)
+}//.l-mv
+
+.l-content {
+
+}//.l-content

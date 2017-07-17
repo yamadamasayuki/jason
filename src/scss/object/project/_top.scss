@@ -1,528 +1,474 @@
 // TOP.SCSS
 
-/* top-contents
-================================================== */
-
-.top-contents {
-	padding: 60px 0 0;
-	background-color: $bg-gray;
-	overflow: hidden;
+.p-pager {
+	font-size: 0;
+	margin: 0 auto 8px;
+	padding: 16px 0;
+	text-align: center;
 
 	@include pc {
-		min-width: $max-width;
-		padding: 80px 0 0;
+		margin: 0 auto 16px;
+		padding: 16px 0;
 	}
 
-	& + .navigator {
-		padding: 0;
-	}
+	@include e(item) {
+		display: inline-block;
+		margin: 0 8px;
+
+		a {
+			display: block;
+			width: 12px;
+			height: 12px;
+			position: relative;
+			border-radius: 50%;
+			border: solid 1px $gray;
+
+			@include pc {
+				width: 16px;
+				height: 16px;
+			}
+
+			&:before {
+				content: '';
+				display: block;
+				width: 12px;
+				height: 12px;
+				margin: auto;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				border-radius: 50%;
+				background-color: transparent;
+				transform: scale(0);
+				transform-origin: center;
+				transition: .3s ease;
+
+				@include pc {
+					width: 16px;
+					height: 16px;
+				}
+			}
+
+			&.active {
+				&:before {
+					background-color: $gray;
+					transform: scale(1);
+				}
+			}
+		}
+	}//e(item)
 }
 
 
 
-/* section
-================================================== */
+.p-message {
 
-.top-section {
-	width: 100%;
-	margin: auto;
-	position: relative;
-
-	@include pc {
-		width: $max-width;
-	}//pc
-
-	@include e(ttl) {
-		@include QuickB;
-		position: relative;
-		margin-bottom: 40px;
+	@include e(header) {
+		padding: 25px 0 80px;
 		text-align: center;
-
-		@include pc {
-			display: inline-block;
-			text-align: left;
-			margin-bottom: 60px;
-		}
-
-		i {
-			@include fz(28,28);
-			vertical-align: inherit;
-			padding-right: 10px;
-			padding-bottom: 3px;
-
-			@include pc {
-				@include fz(42,60);
-				vertical-align: top;
-				margin-right: 20px;
-				padding-right: 0;
-				padding-bottom: 0;
-			}
-		}//i
-
-		.ttl-lg {
-			@include fz(36,36);
-			display: inline-block;
-
-			@include pc {
-				@include fz(56,56);
-			}
-		}//.ttl-lg
-
-		.ttl-slash {
-			@include fz(16,16);
-			display: inline-block;
-			position: relative;
-
-			@include pc {
-				@include fz(14,24);
-			}
-		}//.ttl-sm
-
-		.ttl-sm {
-			@include fz(16,16);
-			display: inline-block;
-			position: relative;
-
-			@include pc {
-				@include fz(16,24);
-			}
-		}//.ttl-sm
-	}//e(ttl)
-}//.section
-
-
-
-/* top-pickup
-================================================== */
-
-.top-pickup {
-	width: 100%;
-	margin: 0 auto;
-	padding: 0 0 120px;
-	position: relative;
-
-	@include pc {
-		width: $max-width;
-		padding: 80px 20px 10px;
-	}//pc
-
-
-
-	.top-section__ttl {
-		display: none;
-
-		@include pc {
-			display: inline-block;
-		}
-	}
-
-	@include e(sttl) {
-		margin-bottom: 40px;
-	}
-
-	@include e(item) {
-		position: relative;
-		z-index: 30;
-
-		@include pc {
-			a {
-				@include deco;
-				@include alpha;
-			}
-		}
-
-		&:first-child {
-			@include pc {
-				width: 560px;
-				position: absolute;
-				top: 296px;
-				left: 20px;
-			}
-		}
-
-		&:nth-child(2) {
-			@include pc {
-				width: 400px;
-				margin-top: -215px;
-				margin-left: 640px;
-				margin-bottom: 60px;
-			}
-		}
-
-		&:nth-child(3) {
-			@include pc {
-				width: 480px;
-				margin-left: 640px;
-			}
-		}
-	}
-
-
-
-	@include e(img) {
-		width: 100%;
-		max-width: 100%;
-
-		img {
-			width: 100%;
-		}
-	}//e(img)
-
-	@include e(txtarea) {
-		padding: 20px 20px 0;
-
-		@include pc {
-			padding: 20px 0 0;
-		}
-	}//e(txtarea)
-
-	@include e(copy) {
-		@include QuickB;
-		@include fz(14,21);
-		color: #000;
-		font-weight: bold;
-	}//e(copy)
-
-	@include e(ttl) {
-		@include QuickB;
-		@include fz(18,27);
-		color: #000;
-		font-weight: bold;
-	}//e(ttl)
-
-	@include e(date) {
-		@include QuickB;
-		@include fz(14,21);
-		color: $gray;
-	}//e(date)
-}//.top-mv
-
-
-
-/* top-article
-================================================== */
-
-.top-article {
-	width: 100%;
-	padding: 0 20px 120px;
-
-	@include pc {
-		width: $max-width;
-		padding: 0 0 160px 100px;
-	}//pc
-
-	.card-list {
-
-		@include pc {
-			margin-bottom: 60px;
-		}
-	}
-}//.top-article
-
-
-
-/* top-movie
-================================================== */
-
-.top-movie {
-	padding: 0 0 120px;
-	position: relative;
-
-	@include pc {
-		padding: 0 20px 160px;
-	}
-
-	@include e(box) {
-		position: relative;
-	}//e(box)
-
-	@include e(character) {
-		position: absolute;
-		top: 0;
-		left: 50%;
-		max-height: 300px;
-		margin-top: -145px;
-		margin-left: -145px;
 		overflow: hidden;
-
-		@include pc {
-			display: block;
-			top: -20px;
-			left: -84px;
-			max-height: none;
-			overflow: auto;
-			z-index: 15;
-			margin-top: 0;
-			margin-left: 0;
-		}
-
-		p {
-			@include QuickR;
-			color: $light-gray;
-			@include fz(10,15);
-			text-align: left;
-			position: absolute;
-			top: 90px;
-			left: 5px;
-
-			@include pc {
-				margin-top: 13px;
-				padding-left: 35px;
-				text-align: center;
-				position: static;
-				top: auto;
-				left: auto;
-			}
-		}
-	}//e(character)
-
-	@include e(trigger) {
-		width: 100%;
-		height: 100px;
-		z-index: -1;
-		background-image: url(/common/image/profile_trg.svg);
-		background-repeat: no-repeat;
-		background-position: right top;
-		background-size: 100px;
-
-		@include pc {
-			width: 130px;
-			height: 130px;
-			position: absolute;
-			top: 0;
-			right: 30px;
-			background-color: #000;
-			background-image: url(/common/image/profile_trg_txt.svg);
-			background-size: 130px;
-			border-radius: 50%;
-			transition: 0.3s ease;
-		}
-	}
-
-	@include e(ttl-img) {
-		width: 120px;
-		height: auto;
-		position: absolute;
-		top: 0;
-		right: 50%;
-		margin-top: -140px;
-		margin-right: 20px;
-
-		@include pc {
-			width: auto;
-			height: auto;
-			position: absolute;
-			right: 73px;
-			margin-top: 0;
-			margin-right: 0;
-		}
-	}//e(ttl-img)
-
-	@include e(lst) {
-		width: 100%;
-		margin: 0 auto 40px;
-		margin-top: 180px;
 		position: relative;
-		box-sizing: content-box;
 
 		@include pc {
-			width: 640px;
-			margin: 0 auto 60px;
-			padding-top: 0;
-			padding-left: 120px;
+			padding: 50px 0 120px;
 		}
-
-		a {
-			@include deco;
-		}
-	}//e(lst)
-
-	@include e(img) {
-		width: 100%;
-		position: relative;
 
 		&:before {
 			content: '';
 			display: block;
-			padding-top: 56.25%;
-		}
-
-		i {
-			@include fz(120,120);
-			display: block;
-			color: #fff;
-			width: 120px;
-			height: 120px;
-			margin: auto;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 160px 1400px 0 0;
+			border-color: $orange transparent transparent transparent;
 			position: absolute;
 			top: 0;
-			bottom: 0;
 			left: 0;
+			z-index: 2;
+
+			@include pc {
+				border-width: 320px 1280px * 2 0 0;
+			}
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 1280px 180px 0;
+			border-color: transparent #fff transparent transparent;
+			position: absolute;
+			top: 0;
 			right: 0;
+			z-index: 1;
+
+			@include pc {
+				border-width: 0 1280px 260px 0;
+			}
 		}
 
-		img {
-			max-width: 100%;
-			width: 100%;
+		h3 {
+			@include fz(20,25);
+			color: #000;
+			letter-spacing: 0.05em;
+			position: relative;
+			z-index: 3;
+
+			@include pc {
+				@include fz(40,50);
+			}
 		}
-	}//e(img)
 
-	@include e(txtarea) {
-		padding: 20px 20px 0;
+		span {
+			@include KreonB;
+			font-size: 2em;
+			color: #fff;
+			letter-spacing: 0.05em;
+			text-shadow: 0 1px 0 #000, 0 -1px 0 #000, 1px 0 0 #000, -1px 0 0 #000;
+			position: relative;
+			margin-right: 8px;
 
-		@include pc {
-			padding: 20px 0 0;
+			&:after {
+				content: '';
+				display: block;
+				width: calc(100% + 4px);;
+				height: 8px;
+				position: absolute;
+				bottom: 6px;
+				left: -4px;
+				background-color: #ff0;
+				z-index: -1;
+
+				@include pc {
+					height: 16px;
+					bottom: 16px;
+				}
+			}
 		}
-	}//e(txtarea)
-
-	@include e(copy) {
-		@include QuickB;
-		@include fz(14,21);
-		color: #000;
-		font-weight: bold;
-	}//e(copy)
-
-	@include e(ttl) {
-		@include QuickB;
-		@include fz(18,27);
-		color: #000;
-		font-weight: bold;
-	}//e(ttl)
-
-	@include e(date) {
-		@include QuickB;
-		@include fz(14,21);
-		color: $gray;
-	}//e(date)
-
-	.btn-wrap {
-		padding-left: 20px;
-		padding-right: 20px;
-
-		@include pc {
-			padding-left: 120px;
-			padding-right: 0;
-		}
-	}
-}//.top-movie
-
-.nobunaga {
-	margin-top: -100px;
-	padding-left: 45px;
-	z-index: 20;
-
-	@include pc {
-		margin-top: 0;
-		padding-left: 0;
-	}
-
-	img {
-		width: 255px;
-
-		@include pc {
-			width: auto;
-		}
-	}
-}
-
-.top-movie__character a:hover {
-	.top-movie__trigger {
-		@include pc {
-			background-color: $dark-gray;
-		}
-	}
-}
-
-
-
-/* top-about
-================================================== */
-
-.top-about {
-	width: 100%;
-	margin: 0 auto;
-	padding-bottom: 30px;
-	position: relative;
-
-	@include pc {
-		width: 1200px;
-		margin: 0 auto;
-		padding: 0 20px 0 100px;
-	}//pc
-
-
+	}//e(header)
 
 	@include e(body) {
-		display: block;
+		display: inline-flex;
+		margin-top: -90px;
+		padding: 90px 20px 32px;
+		background-color: $bg-gray;
+
+		flex-flow: column wrap;
+		justify-content: flex-start;
+		align-items: center;
 
 		@include pc {
-			display: flex;
+			margin-top: -180px;
+			padding: 180px 0 80px;
+
+			flex-flow: row nowrap;
 			justify-content: flex-start;
-			position: relative;
+			align-items: stretch;
 		}
 	}//e(body)
 
-	@include e(img) {
-		flex: 0 1 480px;
-		line-height: 0;
-
-		img {
-			width: 100%;
-			max-width: 100%;
-		}
-	}//e(img)
-
-	@include e(txtarea) {
-		padding: 20px 20px 0;
-		box-sizing: border-box;
+	@include e(copy) {
+		width: 100%;
 
 		@include pc {
-			flex: 0 1 560px;
-			padding: 0 0 0 60px;
+			width: 600 / 1280 * 100%;
 		}
 
-		.btn-wrap {
-			margin-top: 30px;
+		h3 {
+			text-align: center;
 
 			@include pc {
-				margin-top: 40px;
+				margin-top: 56px;
+				margin-left: 20%;
 			}
 		}
-	}//e(txtarea)
 
-	@include e(ttl) {
-		@include QuickB;
-		@include fz(20,30);
-		color: #000;
-		font-weight: bold;
+		span {
+			display: block;
+			@include KreonB;
+			@include fz(40,40);
+			width: 200px;
+			margin: auto;
+			white-space: nowrap;
+			position: relative;
+			box-shadow: 0 -16px 0 0 #ff0 inset;
 
-		@include pc {
-			@include fz(24,36);
-		}//PC
-	}//e(ttl)
+			@include pc {
+				@include fz(62,62);
+				width: 300px;
+			}
 
-	@include e(author) {
-		@include QuickB;
-		@include fz(14,21);
-		color: #000;
-		font-weight: bold;
-		margin-bottom: 20px;
+			& + span {
+				margin-top: 16px;
+			}
 
-		@include pc {
-			@include fz(16,24);
-		}//PC
+			&.p-conf {
+				letter-spacing: 0.01em;
+			}
+
+			&.p-chng {
+				letter-spacing: 0.07em;
+			}
+
+			&.p-comp {
+			}
+		}
 	}//e(copy)
 
 	@include e(txt) {
-		@include QuickR;
-		@include fz(16,24);
-		color: $gray;
+		width: 100%;
+		margin-top: 32px;
 
-	}//e(copy)
+		@include pc {
+			width: 680 / 1280 * 100%;
+			margin-top: 0;
+			padding-right: 48px;
+		}
 
-	a:not([class]) {
-		display: flex !important;
-		justify-content: flex-start;
-		@include alpha;
+		p {
+			@include JPfont;
+			@include fz(12,24);
+
+			@include pc {
+				@include fz(16,32);
+			}
+
+			& + p {
+				margin-top: 1em;
+			}
+		}
+	}//e(txt)
+}//.p-message
+
+
+
+.p-news {
+	margin-top: 16px;
+	overflow: hidden;
+
+	@include pc {
+		margin-left: 36px;
 	}
+
+	@include e(item) {
+		display: block;
+		color: #000;
+		padding: 20px 0 8px;
+		border-bottom: solid 1px $gray;
+		overflow: hidden;
+
+		@include pc {
+			padding: 20px 0 16px;
+
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+	}//e(item)
+
+	@include e(date) {
+		display: inline-block;
+		width: 80px;
+		@include fz(12,16);
+		float: left;
+
+		@include pc {
+			display: block;
+			@include fz(14,24);
+			width: 108px;
+			flex: 1 0 108px;
+			float: none;
+		}
+	}//e(date)
+
+	@include e(label) {
+		display: inline-block;
+		@include fz(10,10);
+		color: #fff;
+		font-weight: 700;
+		width: 54px;
+		margin-right: 26px;
+		margin-top: 8px;
+		padding: 4px 8px;
+		text-align: center;
+		white-space: nowrap;
+		float: left;
+		clear: left;
+
+		@include pc {
+			@include fz(12,12);
+			width: 65px;
+			margin-top: -2px;
+			margin-right: 0;
+			padding: 8px;
+			flex: 1 0 65px;
+			float: none;
+		}
+
+		@include m(jhs3) {
+			background-color: $red;
+		}//m(jhs3)
+
+		@include m(jhs2) {
+			background-color: $cyan;
+		}//m(jhs2)
+
+		@include m(jhs1) {
+			background-color: $green;
+		}//m(jhs1)
+
+		@include m(hs) {
+			background-color: $blue;
+		}//m(hs)
+
+		@include m(es) {
+			background-color: $orange;
+		}//m(es)
+	}//e(label)
+
+	@include e(desc) {
+		@include fz(12,24);
+		width: calc(100% - 80px);
+		float: right;
+		margin-top: -20px;
+
+		@include pc {
+			@include fz(14,24);
+			margin-top: 0;
+			padding-left: 30px;
+			flex: 0 1 calc(100% - 173px);
+			float: none;
+		}
+	}//e(desc)
+
+	@include e(btn) {
+		float: right;
+		margin-right: 16px;
+	}//e(btn)
+}//.p-news
+
+
+
+.p-recruit {
+	margin-top: 56px;
+
+	@include e(ttl) {
+		@include KreonL;
+		@include fz(24,24);
+		color: #fff;
+		padding: 4px 12px;
+		white-space: nowrap;
+		background-color: $recruit-color;
+		border-bottom: solid 2px #fff;
+	}//e(ttl)
+
+	@include e(body) {
+		padding: 12px;
+		border: solid 4px $recruit-color;
+		border-top: solid 8px $recruit-color;
+		overflow: hidden;
+	}//e(body)
+
+	@include e(txt) {
+		@include fz(14,24);
+	}//e(txt)
+
+	@include e(btn) {
+		@include JPfont;
+		@include fz(12,18);
+		float: right;
+		margin-top: 16px;
+		margin-right: 16px;
+
+		&:before,
+		&:after {
+			height: 2px;
+		}
+	}//e(btn)
+}//.p-recruit
+
+
+
+.p-access {
+	margin: 24px 0 36px;
+
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	@include pc {
+		margin: 24px 0 72px;
+
+		flex-flow: row nowrap;
+		align-items: stretch;
+	}
+
+	@include e(map) {
+		width: 100%;
+		margin-bottom: 8px;
+		background-color: $gray;
+
+		@include pc {
+			width: 580 / 980 * 100%;
+			margin-bottom: 0;
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			padding-top: 50%;
+
+			@include pc {
+				padding-top: 376 / 980 / 2 * 100%;
+			}
+		}
+	}//e(map)
+
+	@include e(info) {
+		width: 100%;
+
+		@include pc {
+			width: 376 / 980 * 100%;
+			margin-left: 24 / 980 * 100%;
+		}
+	}//e(info)
+
+	@include e(img) {
+		width: 100%;
+		position: relative;
+
+		background-image: url(/common/img/exterior.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: top -18px center;
+
+		&:before {
+			content: '';
+			display: block;
+			padding-top: 50%;
+		}
+
+		img {
+			width: 100%;
+		}
+	}//e(img)
+
+	@include e(txt) {
+		margin-top: 12px;
+
+		dt {
+			@include fz(16,24);
+			font-weight: 700;
+		}
+
+		dd {
+			@include fz(12,20);
+		}
+	}//e(txt)
 }
